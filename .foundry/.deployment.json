@@ -1,0 +1,7 @@
+{
+  "projectId": "d7e30b52-9646-4a3f-990d-bbc2bab6735a",
+  "hostedAgentDeployOptions": {
+    "deploymentMethod": "container"
+  },
+  "containerRegistry": "4d99a3dprojdefault71edacr.azurecr.io"
+}
