@@ -21,7 +21,7 @@ jobs:
       - name: Install Azure Developer CLI
         uses: Azure/setup-azd@v2
       - name: Install AI Agents Extenstions
-        run: azd extension add azure.ai.agents
+        run: azd extension install azure.ai.agents
 
       - name: Sign in to Azure
         uses: azure/login@v2
