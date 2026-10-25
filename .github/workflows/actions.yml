@@ -34,4 +34,4 @@ jobs:
       # - name: Provisioning
       #   run: azd provision
       - name: Deploy agent
-        run: ls
+        run: azd deploy
