@@ -1,4 +1,4 @@
-name: Deploy agent from agents branch
+name: Deploy agent
 
 on:
   workflow_dispatch:
@@ -13,12 +13,15 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Install Azure Developer CLI
         uses: Azure/setup-azd@v2
+      - name: Install AI Agents Extenstions
+        run: azd extension install azure.ai.agents
 
       - name: Sign in to Azure
         uses: azure/login@v2
@@ -26,6 +29,9 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
+      - name: Log in to azd
+        run: azd auth login --client-id ${{ secrets.AZURE_CLIENT_ID }} --tenant-id ${{ secrets.AZURE_TENANT_ID }} --federated-credential-provider github
+      # - name: Provisioning
+      #   run: azd provision
       - name: Deploy agent
-        run: azd agent deploy
+        run: ls
