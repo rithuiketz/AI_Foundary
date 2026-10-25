@@ -31,4 +31,4 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Deploy agent
-        run: azd agent deploy
+        run: azd  deploy
