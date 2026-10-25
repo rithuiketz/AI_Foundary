@@ -1,4 +1,4 @@
-name: Deploy agent
+name: Deploy agent from agents branch
 
 on:
   workflow_dispatch:
