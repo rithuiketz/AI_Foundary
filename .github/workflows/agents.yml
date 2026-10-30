@@ -1,5 +1,4 @@
-name: Deploy agent
-
+name: Agents Deployment
 on:
   workflow_dispatch:
   push:
@@ -34,4 +33,4 @@ jobs:
       # - name: Provisioning
       #   run: azd provision
       - name: Deploy agent
-        run: ls
+        run: azd provision --location northcentralus && azd deploy --only azure.ai.agents
