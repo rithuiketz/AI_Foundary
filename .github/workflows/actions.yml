@@ -34,4 +34,4 @@ jobs:
       # - name: Provisioning
       #   run: azd provision
       - name: Deploy agent
-        run: azd deploy
+        run: azd provision --location northcentralus && azd deploy --only azure.ai.agents
